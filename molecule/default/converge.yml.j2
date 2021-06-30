@@ -1,0 +1,6 @@
+---
+- name: Converge
+  hosts: all
+  gather_facts: yes
+  roles:
+    - { role: {{ role_name | replace("ansible-role-", "moletti.") }}, tags: {{ role_name | replace("ansible-role-", "") }} }
