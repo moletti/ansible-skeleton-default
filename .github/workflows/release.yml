@@ -8,13 +8,12 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    container: moletti/semantic-release:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - name: Release
+        uses: moletti/semantic-release-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: semantic-release
