@@ -1,0 +1,15 @@
+argument_specs:
+  # roles/{{ role_name }}/tasks/main.yml entry point
+  main:
+    short_description: The main entry point for the myapp role.
+    options:
+      {{ role_name }}_int:
+        type: "int"
+        required: false
+        default: 42
+        description: "The integer value, defaulting to 42."
+
+      {{ role_name }}_str:
+        type: "str"
+        required: true
+        description: "The string value"
